@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestSmart - Your Personal Investment Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        .hamburger {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            transition: all 0.25s;
+            position: relative;
+        }
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            top: 0;
+            left: 0;
+            background: #fff;
+            transform: rotate(0);
+            transition: all 0.5s;
+        }
+        .hamburger-middle {
+            transform: translateY(7px);
+        }
+        .hamburger-bottom {
+            transform: translateY(14px);
+        }
+        .open {
+            transform: rotate(90deg);
+        }
+        .open .hamburger-top {
+            transform: rotate(45deg) translateY(6px) translateX(6px);
+        }
+        .open .hamburger-middle {
+            display: none;
+        }
+        .open .hamburger-bottom {
+            transform: rotate(-45deg) translateY(6px) translateX(-6px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+    <header class="bg-red-800 text-white p-3">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-xl font-bold">InvestSmart</div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="nav-link hover:text-red-300" data-page="home">Home</a>
+                <a href="#" class="nav-link hover:text-red-300" data-page="dashboard">Dashboard</a>
+                <a href="#" class="nav-link hover:text-red-300" data-page="about">About</a>
+                <a href="#" class="nav-link hover:text-red-300" data-page="register">Register</a>
+            </div>
+            <button id="menu-btn" class="hamburger md:hidden focus:outline-none">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-red-700">
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-red-800 nav-link" data-page="home">Home</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-red-800 nav-link" data-page="dashboard">Dashboard</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-red-800 nav-link" data-page="about">About</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-red-800 nav-link" data-page="register">Register</a>
+        </div>
+    </header>
+
+    <main id="main-content" class="container mx-auto px-6 py-8 flex-grow">
+        <!-- Content will be dynamically loaded here -->
+    </main>
+
+    <footer class="bg-black text-white py-6 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 InvestSmart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js">
+
+    </script>
+
+</body>
+</html>
